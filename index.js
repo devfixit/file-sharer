@@ -2,6 +2,7 @@ import express from 'express';
 import fileUpload from 'express-fileupload';
 import path from 'path';
 import fs from 'fs';
+import 'dotenv/config';
 
 const app = express();
 
@@ -83,6 +84,6 @@ app.get("/status", (req, res) => {
     res.json("Server running")
 })
 
-app.listen(5000, () => {
+app.listen(process.env.PORT || 5000, () => {
     console.log("Server Started at: ", 5000);
 })
